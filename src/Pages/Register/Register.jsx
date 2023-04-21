@@ -122,7 +122,7 @@ const [gymData, setGymData]=useState([])
             >
           Submit
         </Button>
-        <p className="mt-3">Already Have an Account<NavLink to='/login'>Login</NavLink></p>
+        <p className="mt-3">Already Have an Account <NavLink to='/login'>Login</NavLink></p>
       </Form>
     </div>
     </>

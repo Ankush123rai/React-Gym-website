@@ -39,8 +39,9 @@ const [gymData, setGymData]=useState([])
          Swal.fire("E-mail field is required")
       }else if(!email.includes("@")){
          Swal.fire("Please enter valid email address")
-      }
-      else if(password==""){
+      }else if(!email.includes(".com")){
+          Swal.fire("Please enter valid email address")
+      }else if(password==""){
          Swal.fire("Password field is required")
       }else if(password.length<5){
          Swal.fire("Password size must be greater than Five")
@@ -49,21 +50,24 @@ const [gymData, setGymData]=useState([])
        if(getUserArr && getUserArr.length){
             const userArr=JSON.parse(getUserArr);
             const user=userArr.find((item,ind)=>item.email===email && item.password===password);
-            if(user.length===0){
-              Swal.fire("Invalid email or password")
-            }else{
-              Swal.fire(
+            if(user){
+               Swal.fire(
                 "Login Successfull",
                 'You clicked the button!',
                     'success',
                 )
                 history("/")
-                localStorage.setItem("Users_login", JSON.stringify(getUserArr))
+            }else{
+               Swal.fire("Login Failed")
             }
         }else{
-          Swal.fire("Invalid email or password")
-        }       
-      }        
+           Swal.fire("Login Failed")
+          
+       }
+
+         localStorage.setItem("Users_login", JSON.stringify(userArr))
+      }   
+      
   }
 
   return (
