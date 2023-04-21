@@ -21,8 +21,7 @@ const Header = () => {
             <NavLink to="/aboutus" className={style.list}>ABOUT</NavLink>
             <NavLink to="/pricing" className={style.list}>PLANS</NavLink>
             <NavLink to="/training" className={style.list}>TRAINING</NavLink>
-            <NavLink to="/login" className={style.join}>JOIN US</NavLink>
-            
+            <NavLink to="/login" className={style.join}>JOIN US</NavLink>  
         </div>
 
             <div className={style.bars_close} onClick={() => setShowNavbar(!showNavbar)}>

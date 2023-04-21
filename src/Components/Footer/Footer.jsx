@@ -9,6 +9,7 @@ const Footer = () => {
   return (
     <>
       <div className={style.container}>
+      <hr />
         <div className={style.footer_title}>
           <h2>
             <span>OX GYM</span>
@@ -19,13 +20,13 @@ const Footer = () => {
           </p>
 
           <div className={style.social_icons}>
-            <ImFacebook2 className={style.icons} />
-            <BsLinkedin className={style.icons} />
-            <ImWhatsapp className={style.icons} />
-            <ImYoutube className={style.icons} />
+          <Link to="https://www.facebook.com/"><ImFacebook2 className={style.icons} /></Link>
+          <Link to="https://www.linkedin.com/feed/"><BsLinkedin className={style.icons} /></Link>
+          <Link to="/"><ImWhatsapp className={style.icons} /></Link>
+          <Link to="/https://www.youtube.com/"><ImYoutube className={style.icons} /></Link>
           </div>
         </div>
-
+           
         <div className={style.footer_content}>
           <hr />
           <ul>

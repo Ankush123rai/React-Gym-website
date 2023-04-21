@@ -1,25 +1,25 @@
-/* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
-/* Global styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
+.background {
+  background-color: #bb4d4d;
+  padding: 1rem 0;
 }
+
 
 .container {
-  max-width: 1000px;
+  max-width: 80%;
   margin: 0 auto;
+  padding: 1rem 0; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 0;
 }
-
 .scrollContainer {
   display: flex;
   overflow-x: scroll;
@@ -31,25 +31,23 @@ body {
 .card {
   min-width: 250px;
   max-width: 400px;
-  /* height: 500px; */
   margin: 20px;
   border-radius: 20px;
   background-color: #fff;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: spa;
+  justify-content: center;
   text-align: center;
-  padding: 30px;
   scroll-snap-align: start;
   transition: transform 0.3s ease-in-out;
-  /* z-index: -1; */
+  padding: .1rem;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+  box-shadow: 0px 15px 30px rgba(247, 243, 243, 0.2);
 }
 
 .card img {
@@ -76,7 +74,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
 }
 
 .arrowContainer button {
@@ -93,50 +90,8 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-.arrowContainer button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-}
-
 .scrollContainer::-webkit-scrollbar {
   display: none;
-}
-
-@media (max-width: 600px) {
-  .card {
-    min-width: 200px;
-    max-width: 300px;
-    height: 300px;
-  }
-}
-
-@media (max-width: 400px) {
-  .card {
-    min-width: 150px;
-    max-width: 250px;
-    height: 250px;
-    margin: 10px;
-    padding: 10px;
-  }
-
-  .scrollContainer {
-    padding-bottom: 10px;
-  }
-}
-
-@media (min-width: 600px) {
-  .scrollContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-@media (min-width: 400px) {
-  .scrollContainer {
-    margin-left: -10px;
-    margin-right: -10px;
-  }
 }
 
 @media (min-width: 1000px) {
@@ -151,3 +106,13 @@ body {
     padding-bottom: 40px;
   }
 }
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 1.2rem;
+  }
+  .scrollContainer {
+    padding-bottom: 40px;
+  }
+}
+  

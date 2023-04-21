@@ -49,15 +49,15 @@ const TrainingPrograms = () => {
   const containerRef = useRef(null);
 
   const scrollLeft = () => {
-    containerRef.current.scrollLeft -= 200;
+    containerRef.current.scrollLeft -= containerRef.current.offsetWidth;
   };
 
   const scrollRight = () => {
-    containerRef.current.scrollLeft += 200;
+    containerRef.current.scrollLeft += containerRef.current.offsetWidth;
   };
 
   return (
-    <>
+    <div className={styles.background}>
       <div className={styles.container}>
         <h2>Training Programs </h2>
         <div className={styles.scrollContainer} ref={containerRef}>
@@ -74,8 +74,9 @@ const TrainingPrograms = () => {
           <button onClick={scrollRight} className={styles.button}>&#8250;</button>
         </div>
       </div>
+      <hr />
       <TrainerPage />
-    </> 
+    </div> 
   );
 };
 

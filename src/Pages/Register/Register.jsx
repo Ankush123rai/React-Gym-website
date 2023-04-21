@@ -73,7 +73,6 @@ const [gymData, setGymData]=useState([])
 
   return (
     <>
-    <d className={style.blur}></d>
     <div className={style.container}>
       <h1>Register</h1>
       <Form>
