@@ -98,6 +98,9 @@ span{
 
     .bars_close{
         display:block;
+        position: fixed;
+        top: 20px;
+        right: 30px;
     }
 }
 
