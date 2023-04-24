@@ -6,6 +6,7 @@ import gymBackgroundImage4 from "./Image4.jpg";
 import gymBackgroundImage5 from "./Image5.jpg";
 import { Link } from "react-router-dom";
 const Home = () => {
+  
   const [currentBackgroundImage, setCurrentBackgroundImage] = useState(0);
   const gymBackgroundImages = [
     gymBackgroundImage1,
@@ -33,6 +34,7 @@ const Home = () => {
         src={gymBackgroundImages[currentBackgroundImage]}
         alt="Gym Background"
       />
+      
       <div className={styles.content}>
         <h1 className={styles.title}>
           <span className={styles.titleLine}>Take care of your body.</span>

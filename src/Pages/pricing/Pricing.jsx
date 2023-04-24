@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Pricing.module.css";
+import { Link } from "react-router-dom";
 
 export default function PriceSection() {
   const registerPageUrl = "/register";
@@ -41,11 +42,13 @@ export default function PriceSection() {
         {memberships.map((membership, index) => (
           <div key={index} className={styles.membership__card}>
             <h1>{membership.name}</h1>
-            <sup>₹</sup>{membership.price}<span>/ {membership.duration}</span>
+           <div className={styles.rate}>
+              <span>₹</span><h3>{membership.price}</h3><span>/ {membership.duration}</span>
+           </div>
             {membership.features.map((feature, index) => (
-              <p key={index}>{feature}</p>
+              <div key={index}>{feature}</div>
             ))}
-            <a href={registerPageUrl} className={styles.button}>Buy Plan</a>
+            <Link to={registerPageUrl} className={styles.button}>Buy Plan</Link>
           </div>
         ))}
       </div>

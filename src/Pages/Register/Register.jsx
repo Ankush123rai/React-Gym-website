@@ -18,7 +18,13 @@ const Register = () => {
     confirmPassword: "",
   });
 
-const [gymData, setGymData]=useState([])
+
+  const [gymData, setGymData] = useState(() => {
+    const storedData = localStorage.getItem("gymUsers");
+    return storedData ? JSON.parse(storedData) : [];
+  });
+
+
 
   const getRegister = (e) => {
 
@@ -32,6 +38,7 @@ const [gymData, setGymData]=useState([])
   }
   const handleSubmitData=(e)=>{
       e.preventDefault()
+      
       
       const {name,email,password,confirmPassword}=inputValue;
       if(name==""){
@@ -47,10 +54,7 @@ const [gymData, setGymData]=useState([])
         Swal.fire("Please enter valid email address")
       }else if(!email.includes(".com")){
         Swal.fire("Please enter valid email address")
-      }else if(email==gymData.email){
-        Swal.fire("email is Already register")
-      }
-      else if(password==""){
+      }else if(password==""){
         Swal.fire("Password field is required")
       }else if(confirmPassword==""){
         Swal.fire("Confirm-Passowrd field is required")
@@ -59,18 +63,20 @@ const [gymData, setGymData]=useState([])
       }
       else if(password!==confirmPassword){
         Swal.fire("Password must be same")
-      }else{
-        Swal.fire(
-          'Register Successfull!',
-        )
-        showLogin("/login")
-
-        localStorage.setItem("gymUsers", JSON.stringify([...gymData,inputValue]))
-      }   
-      
-  }
-
-
+      }
+      const existingUser = gymData.find((user) => user.email === email);
+      if (existingUser) {
+        Swal.fire("User with this email already exists");
+        return;
+      }
+  
+      const newUser = { name, email, password };
+      setGymData([...gymData, newUser]);
+      localStorage.setItem("gymUsers", JSON.stringify([...gymData, newUser]));
+  
+      Swal.fire("Successfull!", "You clicked the button!", "success");
+    };
+    
   return (
     <>
     <div className={style.container}>

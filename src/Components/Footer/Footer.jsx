@@ -12,7 +12,7 @@ const Footer = () => {
       <hr />
         <div className={style.footer_title}>
           <h2>
-            <span>OX GYM</span>
+            <span>CALCIUM GYM</span>
           </h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos magni,
@@ -31,7 +31,7 @@ const Footer = () => {
           <hr />
           <ul>
             <h3>
-              <span>OX GYM</span>
+              <span>CALCIUM GYM</span>
             </h3>
             <Link to="/">Home</Link>
             <Link to="/aboutus">AboutUs</Link>

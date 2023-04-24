@@ -4,19 +4,20 @@ import Form from "react-bootstrap/Form";
 import style from "./Login.module.css";
 import Swal from 'sweetalert2'
 import { NavLink, useNavigate } from "react-router-dom";
+// import { LogoutButton } from '../../components/header/Header';
+
 
 
 
 const Login = () => {
-
   const history = useNavigate();
-
+  
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
   });
 
-const [gymData, setGymData]=useState([])
+
 
   const getRegister = (e) => {
 
@@ -57,6 +58,7 @@ const [gymData, setGymData]=useState([])
                     'success',
                 )
                 history("/")
+               
             }else{
                Swal.fire("Login Failed")
             }
