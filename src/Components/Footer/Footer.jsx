@@ -22,8 +22,8 @@ const Footer = () => {
           <div className={style.social_icons}>
           <Link to="https://www.facebook.com/"><ImFacebook2 className={style.icons} /></Link>
           <Link to="https://www.linkedin.com/feed/"><BsLinkedin className={style.icons} /></Link>
-          <Link to="/"><ImWhatsapp className={style.icons} /></Link>
-          <Link to="/https://www.youtube.com/"><ImYoutube className={style.icons} /></Link>
+          <Link to="https://web.whatsapp.com/"><ImWhatsapp className={style.icons} /></Link>
+          <Link to="https://www.youtube.com/"><ImYoutube className={style.icons} /></Link>
           </div>
         </div>
            
@@ -35,7 +35,7 @@ const Footer = () => {
             </h3>
             <Link to="/">Home</Link>
             <Link to="/aboutus">AboutUs</Link>
-            <Link to="/location">Traning</Link>
+            <Link to="/pricing">Traning</Link>
           </ul>
 
           <ul>
