@@ -75,6 +75,7 @@ const Register = () => {
       localStorage.setItem("gymUsers", JSON.stringify([...gymData, newUser]));
   
       Swal.fire("Successfull!", "You clicked the button!", "success");
+      showLogin("/login")
     };
     
   return (
